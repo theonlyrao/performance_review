@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :sessions, only: [:new, :create]
   end
 
+  resources :managers, only: [:index]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
