@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :manager do
-    resources :sessions, only: [:new]
+    resources :sessions, only: [:new, :create]
   end
 
   # Example of regular route:

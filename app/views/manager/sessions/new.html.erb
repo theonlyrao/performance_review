@@ -1,6 +1,6 @@
 <h1>Manager New Session Page</h1>
 
-<%= form_for(:session) do |f| %>
+<%= form_for :session, url: manager_sessions_path do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
   <%= f.label :password %>
