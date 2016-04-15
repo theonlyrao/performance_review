@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415160242) do
+ActiveRecord::Schema.define(version: 20160415161614) do
+
+  create_table "managers", force: :cascade do |t|
+    t.string  "username"
+    t.string  "password_digest"
+    t.integer "organization_id"
+  end
+
+  add_index "managers", ["organization_id"], name: "index_managers_on_organization_id"
 
   create_table "organizations", force: :cascade do |t|
     t.string "name"
