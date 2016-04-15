@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415162803) do
+ActiveRecord::Schema.define(version: 20160415163221) do
+
+  create_table "employees", force: :cascade do |t|
+    t.string  "username"
+    t.string  "password_digest"
+    t.integer "team_id"
+  end
+
+  add_index "employees", ["team_id"], name: "index_employees_on_team_id"
 
   create_table "managers", force: :cascade do |t|
     t.string  "username"
