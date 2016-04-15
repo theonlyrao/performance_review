@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   namespace :manager do
-    resources :sessions, only: [:new, :create]
+    resources :sessions, only: [:new, :create, :destroy]
+    resources :employees, only: [:index, :new]
   end
 
   resources :managers, only: [:index]

@@ -22,8 +22,8 @@ feature "Admin logs in" do
     expect(page).to have_content "Organization: #{firm.name}"
     expect(page).to have_content "#{alpha.name}"
     expect(page).to have_content "#{beta.name}"
-    expect(page).to find_link("View all employees").visible?
-    expect(page).to find_link("Add an employee").visible?
+    expect(page).to have_link("View all employees")
+    expect(page).to have_link("Add an employee")
 
     click_link "Logout"
 

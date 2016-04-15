@@ -12,4 +12,9 @@ class Manager::SessionsController < Manager::BaseController
     end
   end
 
+  def destroy
+    session[:manager_id] = nil
+    redirect_to "/"
+  end
+
 end
