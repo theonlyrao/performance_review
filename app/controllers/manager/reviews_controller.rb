@@ -5,10 +5,10 @@ class Manager::ReviewsController < Manager::BaseController
   end
 
   def create
-    @review = Review.new
+    reviewee = Employee.find(params[:reviews][:reviewee])
+    @review = Review.new(employee_id: reviewee.id)
     if @review.save
       reviewer = Employee.find(params[:reviews][:reviewer])
-      reviewee = Employee.find(params[:reviews][:reviewee])
       flash[:notice] = "#{reviewer.username} has been assigned to review #{reviewee.username}."
       redirect_to managers_path(reviewer.manager)
     else
