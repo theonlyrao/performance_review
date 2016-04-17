@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :manager do
     resources :sessions, only: [:new, :create, :destroy]
     resources :employees, only: [:index, :new, :create]
+    resources :reviews, only: [:new, :create]
   end
 
   resources :managers, only: [:index]

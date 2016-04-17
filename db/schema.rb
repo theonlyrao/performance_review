@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415163221) do
+ActiveRecord::Schema.define(version: 20160417050500) do
 
   create_table "employees", force: :cascade do |t|
     t.string  "username"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20160415163221) do
   create_table "organizations", force: :cascade do |t|
     t.string "name"
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.date    "date_given"
+    t.integer "my_money"
+    t.integer "my_team"
+    t.boolean "at_risk"
+    t.boolean "promote"
+    t.integer "employee_id"
+  end
+
+  add_index "reviews", ["employee_id"], name: "index_reviews_on_employee_id"
 
   create_table "teams", force: :cascade do |t|
     t.string  "name"
