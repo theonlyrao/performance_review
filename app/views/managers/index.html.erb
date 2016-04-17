@@ -3,6 +3,8 @@
 <p>Organization: <%= @manager.organization.name %></p>
 <p>Teams: <%= @manager.teams.each { |team| team.name } %></p>
 <p><%= link_to "View all employees", manager_employees_path %></p>
-<p><%= link_to "Add an employee", new_manager_employee_path %>
+<p><%= link_to "Add an employee", new_manager_employee_path %></p>
+<p><%= link_to "Request Employee Review", new_manager_review_path %>
+
 
 <p><%= link_to "Logout", manager_session_path(@manager), method: "delete" %></p>
