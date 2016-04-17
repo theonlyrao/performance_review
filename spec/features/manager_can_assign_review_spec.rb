@@ -14,19 +14,12 @@ feature "Manager logs in" do
     fill_in("Username", with: bill.username)
     fill_in("Password", with: bill.password)
     click_on "Login"
-
     click_on "Request Employee Review"
-
-    within("#reviewer") do
-      select "#{samir.username}", from: "reviews_employee_id"
-    end
-
-    within("#reviewee") do
-      select "#{michael.username}", from: "reviews_employee_id"
-    end
-
+    select "#{samir.username}", from: "reviews_reviewer"
+    select "#{michael.username}", from: "reviews_reviewee"
     click_on "Assign Review"
 
-    assert(page).has_content "#{samir.username} has been assigned to review #{michael.username}."
+    expect(page).to have_content "#{samir.username} has been assigned to review #{michael.username}."
+    assert_equal michael.id, Review.last.employee_id
   end
 end

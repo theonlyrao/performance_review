@@ -1,5 +1,5 @@
 <%= form_for(:reviews, url: manager_reviews_path) do |f| %>
-  <div id="reviewer"><%= f.collection_select :employee_id, @employees, :id, :username, prompt: "Select the reviewer"%></div>
-  <div id="reviewee"><%= f.collection_select :employee_id, @employees, :id, :username, prompt: "Select the employee being reviewed"%></div>
+  <%= f.collection_select :reviewer, @employees, :id, :username, prompt: "Select the reviewer"%>
+  <%= f.collection_select :reviewee, @employees, :id, :username, prompt: "Select the employee being reviewed"%>
   <%= f.submit "Assign Review" %>
 <% end %>
