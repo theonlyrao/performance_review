@@ -1,0 +1,9 @@
+<%= form_for :employee, url: manager_employees_path do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  <%= f.label :team %>
+  <%= f.collection_select :team_id, @teams, :id, :name, prompt: "Select a team" %>
+  <%= f.submit "Create Employee" %>
+<% end %>

@@ -21,10 +21,11 @@ feature "Manager logs in" do
     fill_in("Username", with: bill.username)
     fill_in("Password", with: bill.password)
     click_on "Login"
-    click_on "Create A New Employee"
+    click_on "Add an employee"
     fill_in("Username", with: employee_username)
     fill_in("Password", with: employee_password)
-    select "#{beta.name}", from: "employee_team"
+    select "#{beta.name}", from: "employee_team_id"
+    click_on "Create Employee"
 
     assert_equal "Peter", Employee.last.username
     assert_equal bill.username, Employee.last.team.manager.username
