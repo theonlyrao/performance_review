@@ -9,10 +9,12 @@ Rails.application.routes.draw do
 
   namespace :manager do
     resources :sessions, only: [:new, :create, :destroy]
-    resources :employees, only: [:index, :new]
+    resources :employees, only: [:index, :new, :create]
   end
 
   resources :managers, only: [:index]
+
+  resources :employees, only: [:show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
