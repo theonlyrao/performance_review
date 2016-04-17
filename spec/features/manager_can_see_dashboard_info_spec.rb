@@ -3,7 +3,7 @@ require "rails_helper"
 feature "Manager logs in" do
   scenario "views relevant info on dashboard" do
 
-    firm = create(:organization)
+    pentatrode = create(:organization)
     bill = create(:manager)
     alpha = create(:team, manager_id: bill.id)
     beta = create(:team, manager_id: bill.id)
@@ -19,7 +19,7 @@ feature "Manager logs in" do
     fill_in("Password", with: bill.password)
     click_on "Login"
 
-    expect(page).to have_content "Organization: #{firm.name}"
+    expect(page).to have_content "Organization: #{pentatrode.name}"
     expect(page).to have_content "#{alpha.name}"
     expect(page).to have_content "#{beta.name}"
     expect(page).to have_link("View all employees")
