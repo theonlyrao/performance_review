@@ -3,4 +3,5 @@ class Employee < ActiveRecord::Base
 
   belongs_to :team
   has_one :manager, through: :team
+  has_many :reviews
 end

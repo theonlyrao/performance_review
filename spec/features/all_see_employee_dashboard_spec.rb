@@ -18,14 +18,14 @@ feature "Employee has a dashboard" do
     click_on "Login"
 
     assert_equal employee_path(peter), current_path
-    assert page.has_content "my_money: 3"
+    assert page.has_content? "my_money: #{review.my_money}"
   end
 
   scenario "manager has assigned review" do
     # link appears
   end
 
-  scenaior "manager wants to see employee's dashboard" do
+  scenario "manager wants to see employee's dashboard" do
     # manager can navigate to the dashboard
   end
 
