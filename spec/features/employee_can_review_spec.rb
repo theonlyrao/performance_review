@@ -14,7 +14,7 @@ feature "Employee has been assigned review" do
     fill_in("Username", with: samir.username)
     fill_in("Password", with: samir.password)
     click_on "Login"
-    save_and_open_page
+
     click_on "Complete assigned review"
 
     assert review_path(michael.id), current_path
