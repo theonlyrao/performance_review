@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417050500) do
+ActiveRecord::Schema.define(version: 20160418034216) do
 
   create_table "employees", force: :cascade do |t|
     t.string  "username"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160417050500) do
     t.boolean "at_risk"
     t.boolean "promote"
     t.integer "employee_id"
+    t.integer "reviewer"
   end
 
   add_index "reviews", ["employee_id"], name: "index_reviews_on_employee_id"
