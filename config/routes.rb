@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   resources :employees, only: [:show]
 
+  resources :reviews, only: [:show]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
