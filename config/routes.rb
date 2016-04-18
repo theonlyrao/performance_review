@@ -15,7 +15,13 @@ Rails.application.routes.draw do
 
   resources :managers, only: [:index]
 
+  namespace :employee do
+    resources :sessions, only: [:new, :create]
+  end
+
   resources :employees, only: [:show]
+
+  resources :reviews, only: [:show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

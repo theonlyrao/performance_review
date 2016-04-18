@@ -1,0 +1,9 @@
+<h1><%= @employee.username %> show page</h1>
+
+<p><% if @review %>
+  <%= link_to "Complete assigned review", review_path(@review) %>
+<% end %></p>
+
+<p>my_money: <% @reviews.each do |review| %>
+  <%= review.my_money %>
+<% end %></p>

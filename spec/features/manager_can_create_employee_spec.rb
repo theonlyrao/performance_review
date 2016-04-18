@@ -10,7 +10,6 @@ feature "Manager logs in" do
     employee_password = "password"
 
     visit root_path
-
     click_link "Manager Login"
     fill_in("Username", with: bill.username)
     fill_in("Password", with: bill.password)
