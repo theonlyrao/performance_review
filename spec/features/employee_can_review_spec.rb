@@ -7,7 +7,7 @@ feature "Employee has been assigned review" do
     alpha = create(:team, manager_id: bill.id)
     samir = create(:employee, team_id: alpha.id)
     michael = create(:employee, team_id: alpha.id)
-    review = create(:review, reviewer: samir.id, employee_id: michael.id)
+    review = Review.create(reviewer: samir.id, employee_id: michael.id)
 
     visit root_path
     click_link "Employee Login"
@@ -19,15 +19,15 @@ feature "Employee has been assigned review" do
 
     assert review_path(michael.id), current_path
 
-    fill_in "My_money", "4"
-    fill_in "My_team", "3"
-    fill_in "At_risk", "true"
-    fill_in "promote", "false"
+    fill_in "My money", with: "4"
+    fill_in "My team", with: "3"
+    fill_in "At risk", with: "true"
+    fill_in "Promote", with: "false"
     click_on "Submit Review"
 
-    assert employe_path(samir.id), current_path
+    assert employee_path(samir.id), current_path
     refute page.has_content?("Complete assigned reivew")
-    assert michcael.id, Review.last.employee_id
+    assert michael.id, Review.last.employee_id
     assert "4", Review.last.my_money
     assert "3", Review.last.my_team
     assert "true", Review.last.at_risk

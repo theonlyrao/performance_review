@@ -1,0 +1,13 @@
+<h1>Hi, <%= Employee.find(@review.reviewer).username %>. Please review <%= Employee.find(@review.employee_id).username %>.
+
+<%= form_for @review do |f| %>
+  <%= f.label "my_money" %>
+  <%= f.text_field "my_money" %>
+  <%= f.label "my_team" %>
+  <%= f.text_field "my_team" %>
+  <%= f.label "at_risk" %>
+  <%= f.text_field "at_risk" %>
+  <%= f.label "promote" %>
+  <%= f.text_field "promote" %>
+  <%= f.submit "Submit Review" %>
+<% end %>
