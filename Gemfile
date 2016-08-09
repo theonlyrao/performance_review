@@ -43,6 +43,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.2'
   gem 'database_cleaner'
   gem 'shoulda-matchers', '3.0.1'
+  gem "jasmine-rails"
 end
 
 group :development do
