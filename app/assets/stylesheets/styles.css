@@ -1,0 +1,36 @@
+.navbar {
+    width: auto;
+    height: 50px;
+    background-color: #EDB183;
+    color: #3A2E39;
+    border-bottom: 1px solid #3A2E39;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.navbar li a {
+    display: block;
+    width: 100px;
+    float: left;
+    padding-top: 15px;
+    padding-bottom: 19px;
+    text-align: center;
+    background-color: #1E555C;
+    text-decoration: none;
+    color: white;
+    border-left: 1px solid #3A2E39;
+    border-right: 1px solid #3A2E39;
+}
+
+.navbar li a:hover {
+    background-color: #F4D8CD;
+    color: #3A2E39;    
+}
+
+.navbar #logout {
+    float: right;
+    margin-right: 0px;
+}
