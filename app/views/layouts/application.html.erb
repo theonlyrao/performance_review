@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= render "shared/navbar" %>
+  
 <% flash.each do |type, message| %>
   <%= content_tag :div, message, class: "flash_#{type}" %>
 <% end %>
